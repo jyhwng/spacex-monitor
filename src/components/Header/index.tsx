@@ -12,7 +12,7 @@ const Base = styled.header`
   margin: 0 auto;
   max-width: 900px;
   position: sticky;
-  padding: 36px 0 24px;
+  padding: 36px 24px 24px;
   background-color: #282c34;
   h1 {
     margin: 0;
