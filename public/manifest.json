@@ -1,0 +1,6 @@
+{
+  "short_name": "SpaceX Monitor",
+  "name": "SpaceX Monitor",
+  "start_url": ".",
+  "display": "standalone"
+}
