@@ -14,8 +14,7 @@ export const RocketFilter: React.FC = () => {
   };
 
   return (
-    <Fieldset>
-      <legend>Rocket</legend>
+    <Fieldset legend="Rocket">
       <Tag onClick={onClickRocketTag} id="falcon1">
         Falcon 1
       </Tag>

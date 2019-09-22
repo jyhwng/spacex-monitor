@@ -17,7 +17,7 @@ const Base = styled.div`
   display: flex;
   margin: 0 auto;
   padding: 0 24px;
-  max-width: 900px;
+  max-width: 1100px;
 `;
 
 const Left = styled.div`

@@ -15,8 +15,8 @@ export const Header: React.FC = () => (
 const Base = styled.header`
   top: 0;
   margin: 0 auto;
-  max-width: 900px;
   position: sticky;
+  max-width: 1100px;
   padding: 36px 24px 24px;
   background-color: #282c34;
   h1 {
