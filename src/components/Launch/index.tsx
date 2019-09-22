@@ -2,7 +2,6 @@ import * as React from "react";
 import { LaunchInfo } from "../../types";
 import styled from "styled-components";
 import { Tag } from "../Tag";
-import { TextEllipsis } from "../TextEllipsis";
 
 interface Props {
   launch: LaunchInfo;
@@ -11,7 +10,7 @@ interface Props {
 export const Launch: React.FC<Props> = ({ launch }) => {
   const { missionName, rocket, launchDateUnix, launchSuccess, links } = launch;
   return (
-    <Section>
+    <section>
       {links.flickrImages.length > 0 && (
         <ImgWrapper>
           <Img src={links.flickrImages[0]} />
@@ -21,18 +20,24 @@ export const Launch: React.FC<Props> = ({ launch }) => {
         <ContentTop>
           <h3>
             {missionName}
-            <span> {launchSuccess ? "✅" : launchSuccess === null ? "" : "❌"}</span>
+            <span role="img" aria-label="emoji">
+              {" "}
+              {launchSuccess ? "✅" : launchSuccess === null ? "" : "❌"}
+            </span>
           </h3>
           <Tag disabled>{rocket.rocketName}</Tag>
         </ContentTop>
-        <div>📅 {new Date(launchDateUnix * 1000).toLocaleString()}</div>
-        {launch.details && <TextEllipsis lines={3}>{launch.details}</TextEllipsis>}
+        <div>
+          <span role="img" aria-label="emoji">
+            📅
+          </span>
+          {new Date(launchDateUnix * 1000).toLocaleString()}
+        </div>
+        {launch.details && <p>{launch.details}</p>}
       </Content>
-    </Section>
+    </section>
   );
 };
-
-const Section = styled.section``;
 
 const Img = styled.img`
   width: 100%;
