@@ -1,6 +1,6 @@
 import { handleActions } from "redux-actions";
 import { LaunchInfo } from "../../types";
-import { GET_LAUNCHES } from "../actions/launchActions";
+import { GET_LAUNCHES, FILTER_BY_MISSION_NAME } from "../actions/launchActions";
 
 export interface LaunchState {
   launches: LaunchInfo[];
@@ -19,6 +19,12 @@ export const launchReducer = handleActions(
     [GET_LAUNCHES.FAILED]: (state, action: any) => ({
       ...state,
       launches: []
+    }),
+    [FILTER_BY_MISSION_NAME]: (state, action: any) => ({
+      ...state,
+      launches: state.launches.filter((launch: LaunchInfo) =>
+        launch.missionName.includes(action.payload)
+      )
     })
   },
   initialLaunchesState
