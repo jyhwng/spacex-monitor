@@ -3,7 +3,12 @@ import styled from "styled-components";
 
 export const Header: React.FC = () => (
   <Base>
-    <h1>🚀 SpaceX Monitor</h1>
+    <h1>
+      <span role="img" aria-label="emoji">
+        🚀
+      </span>{" "}
+      SpaceX Monitor
+    </h1>
   </Base>
 );
 
