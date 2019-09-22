@@ -6,11 +6,9 @@ import { getLaunches } from "../../services/actions/launchActions";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../services/types";
 
-interface Props {}
-
-export const Launches: React.FC<Props> = () => {
+export const Launches: React.FC = () => {
   const dispatch = useDispatch();
-  const { launches } = useSelector((state: RootState) => state.launch);
+  const { launches, filtered, searchKeyword } = useSelector((state: RootState) => state.launch);
 
   React.useEffect(() => {
     dispatch(getLaunches());
@@ -18,8 +16,8 @@ export const Launches: React.FC<Props> = () => {
 
   return (
     <Ul>
-      {launches.map((launch: LaunchInfo, index: number) => (
-        <React.Fragment key={index}>
+      {(searchKeyword ? filtered : launches).map((launch: LaunchInfo, index: number) => (
+        <React.Fragment key={launch.flightNumber}>
           {(index + 1) % 2 === 0 && <RowGap />}
           <Li>
             <Launch launch={launch} />
