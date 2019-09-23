@@ -1,6 +1,6 @@
-# SpaceX Monitor
+# SpaceX Monitor 🚀
 
-> Monitor past, upcoming SpaceX launches by searching and filtering missions, rockets and more
+> Search and filter past, upcoming SpaceX launches
 
 1. Visit [SpaceX Monitor](https://spacex-monitor.surge.sh/) or,
 
