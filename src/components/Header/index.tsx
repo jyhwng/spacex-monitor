@@ -14,6 +14,7 @@ export const Header: React.FC = () => (
 
 const Base = styled.header`
   top: 0;
+  z-index: 1;
   margin: 0 auto;
   position: sticky;
   max-width: 1100px;

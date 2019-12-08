@@ -16,10 +16,8 @@ export const LaunchSuccessFilter: React.FC = () => {
   };
 
   return (
-    <Fieldset legend="Filters">
-      <Checkbox checked={!!isChecked} onChange={e => _onChange(e)}>
-        Successful
-      </Checkbox>
-    </Fieldset>
+    <Checkbox checked={!!isChecked} onChange={e => _onChange(e)}>
+      Successful
+    </Checkbox>
   );
 };

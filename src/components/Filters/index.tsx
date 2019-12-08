@@ -3,11 +3,14 @@ import styled from "styled-components";
 import { RocketFilter } from "../RocketFilter";
 import { LaunchSuccessFilter } from "../LaunchSuccessFilter";
 import { Search } from "../Search";
+import { Fieldset } from "../Fieldset";
 
 export const Filters: React.FC = () => (
   <Wrapper>
     <Search />
-    <LaunchSuccessFilter />
+    <Fieldset legend="Filters">
+      <LaunchSuccessFilter />
+    </Fieldset>
     <RocketFilter />
   </Wrapper>
 );

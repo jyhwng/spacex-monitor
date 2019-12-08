@@ -30,7 +30,7 @@ export const Launch: React.FC<Props> = ({ launch }) => {
         <div>
           <span role="img" aria-label="emoji">
             📅
-          </span>
+          </span>{" "}
           {new Date(launchDateUnix * 1000).toLocaleString()}
         </div>
         {launch.details && <p>{launch.details}</p>}
