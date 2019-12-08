@@ -18,6 +18,9 @@ const Base = styled.div`
   margin: 0 auto;
   padding: 0 24px;
   max-width: 1100px;
+  @media (max-width: 767px) {
+    display: block;
+  }
 `;
 
 const Left = styled.div`
@@ -26,5 +29,7 @@ const Left = styled.div`
 
 const Right = styled.div`
   flex: 3;
-  margin-left: 24px;
+  @media (min-width: 768px) {
+    margin-left: 24px;
+  }
 `;

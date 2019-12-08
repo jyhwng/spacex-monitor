@@ -18,11 +18,9 @@ export const Launches: React.FC = () => {
     <Ul>
       {(searchKeyword ? filtered : launches).map((launch: LaunchInfo, index: number) => (
         <React.Fragment key={launch.flightNumber}>
-          {(index + 1) % 2 === 0 && <RowGap />}
           <Li>
             <Launch launch={launch} />
           </Li>
-          {(index + 1) % 2 === 0 && <Linebreak />}
         </React.Fragment>
       ))}
     </Ul>
@@ -30,23 +28,18 @@ export const Launches: React.FC = () => {
 };
 
 const Ul = styled.ul`
-  display: flex;
   margin-top: 0;
   padding-left: 0;
-  flex-wrap: wrap;
-  list-style: none;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 767px) {
+    display: block;
+  }
 `;
 
 const Li = styled.li`
-  flex: 1;
-`;
-
-const RowGap = styled.div`
-  width: 16px;
-`;
-
-const Linebreak = styled.div`
-  width: 0;
-  height: 16px;
-  flex-basis: 100%;
+  @media (max-width: 767px) {
+    margin-bottom: 16px;
+  }
 `;
